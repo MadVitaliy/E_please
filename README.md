@@ -49,9 +49,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ### `npm run deploy`
 
 Make static build of project and push it into "gh-page" branch. You can see result via link: 
+
 https://madvitaliy.github.io/E_please/
-### note
-Make deploy from master branch only!!!
+
+**note: Make deploy from master branch only!!!**
 
 ## Learn More
 
