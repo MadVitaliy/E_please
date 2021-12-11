@@ -3,6 +3,10 @@ import i from './Homepage.module.css';
 import DeviceTab from "./DeviceTab/DeviceTab";
 import {useSelector} from "react-redux";
 
+import Heater from './DeviceTab/images/Heater.jpg';
+import Lamp from './DeviceTab/images/Lamp.jpg';
+import Backlight from './DeviceTab/images/Backlight.jpg';
+
 // console.log(i);
 // const CONTROL_TYPE = {
 //     SWITCHER: 0,
@@ -34,6 +38,7 @@ import {useSelector} from "react-redux";
 //             control_type: CONTROL_TYPE.SLIDER
 //         }
 //     ];
+
 
 const Homepage = () => {
     let devices = useSelector(state => state.devices);
