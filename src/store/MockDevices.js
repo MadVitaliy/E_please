@@ -1,3 +1,6 @@
+import Heater from './images/Heater.jpg';
+import Lamp from './images/Lamp.jpg';
+import Backlight from './images/Backlight.jpg';
 
 const CONTROL_TYPE = {
     SWITCHER: 0,
@@ -12,20 +15,23 @@ export let deviceList =
             name: "Heater",
             protocol: "some iot protocol",
             status: CONNECTED,
-            control_type: CONTROL_TYPE.VALUE
+            control_type: CONTROL_TYPE.VALUE,
+            img: Heater,
         },
         {
             id: 2,
             name: "Lamp",
             protocol: "some iot protocol",
             status: CONNECTED,
-            control_type: CONTROL_TYPE.SWITCHER
+            control_type: CONTROL_TYPE.SWITCHER,
+            img: Lamp,
         },
         {
             id: 3,
             name: "Backlight",
             protocol: "some iot protocol",
             status: !CONNECTED,
-            control_type: CONTROL_TYPE.SLIDER
+            control_type: CONTROL_TYPE.SLIDER,
+            img: Backlight,
         }
     ];

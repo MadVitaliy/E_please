@@ -3,43 +3,6 @@ import i from './Homepage.module.css';
 import DeviceTab from "./DeviceTab/DeviceTab";
 import {useSelector} from "react-redux";
 
-import Heater from './DeviceTab/images/Heater.jpg';
-import Lamp from './DeviceTab/images/Lamp.jpg';
-import Backlight from './DeviceTab/images/Backlight.jpg';
-
-// console.log(i);
-// const CONTROL_TYPE = {
-//     SWITCHER: 0,
-//     SLIDER: 1,
-//     VALUE: 2
-// };
-// const CONNECTED = true;
-// let devices =
-//     [
-//         {
-//             id: 1,
-//             name: "Heater",
-//             protocol: "some iot protocol",
-//             status: CONNECTED,
-//             control_type: CONTROL_TYPE.VALUE
-//         },
-//         {
-//             id: 2,
-//             name: "Lamp",
-//             protocol: "some iot protocol",
-//             status: CONNECTED,
-//             control_type: CONTROL_TYPE.SWITCHER
-//         },
-//         {
-//             id: 3,
-//             name: "Backlight",
-//             protocol: "some iot protocol",
-//             status: !CONNECTED,
-//             control_type: CONTROL_TYPE.SLIDER
-//         }
-//     ];
-
-
 const Homepage = () => {
     let devices = useSelector(state => state.devices);
     const device_tabs = devices.map((device) =>
