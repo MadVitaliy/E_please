@@ -4,7 +4,7 @@ import DeviceTab from "../DeviceTabList/DeviceTab/DeviceTab";
 
 const DeviceTabList = (props) => {
     let devices = props.devices;
-    const device_tabs = devices.map((device) =>
+    let device_tabs = devices.map((device) =>
         <DeviceTab device={device}/>
     );
     return (

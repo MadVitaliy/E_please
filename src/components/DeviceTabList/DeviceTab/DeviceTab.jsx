@@ -6,21 +6,22 @@ console.log(i);
 
 const DeviceTab = (props) => {
     let device = props.device;
-    var Toggle = require('react-toggle');
+    //var Toggle = require('react-toggle');
     return (
         <div className={i.tab}>
             <div>
                 <img src={device.img} width="100" height="100"/>
             </div>
-            <p>Device <b>{device.id}</b> <b>{device.name}</b> status: <b>{device.status ? "connected": "disconnected"}</b> </p>
-            <p>Use <b>{device.protocol}</b> protocol, control_type: <>{device.control_type}</> </p>
-                       
+            <p>Device <b>{device.id}</b>
+                <b>{device.name}</b> status: <b>{device.status ? "connected" : "disconnected"}</b></p>
+            <p>Use <b>{device.protocol}</b> protocol, control_type: <>{device.control_type}</></p>
+
             <label class="switch">
                 <input type="checkbox"/>
-                <span class="slider round"></span>
+                <span class="slider round"/>
             </label>
-            
-            
+
+
         </div>
     );
 };
