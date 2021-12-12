@@ -1,16 +1,11 @@
 import React from 'react';
 import i from './Homepage.module.css';
-import DeviceTab from "./DeviceTab/DeviceTab";
-import {useSelector} from "react-redux";
+import DeviceTabListContainer from "../DeviceTabList/DeviceTabListContainer";
 
-const Homepage = () => {
-    let devices = useSelector(state => state.devices);
-    const device_tabs = devices.map((device) =>
-        <DeviceTab device={device}/>
-    );
+const Homepage = (props) => {
     return (
-        <div className={i.page}>
-            {device_tabs}
+        <div>
+            <DeviceTabListContainer/>
         </div>
     );
 };
