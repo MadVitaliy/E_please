@@ -2,7 +2,11 @@ import {deviceList} from './MockDevices'
 import {DEVICE_ACTION} from "./DeviceActions";
 
 export const deviceReducer = (state = deviceList, action) => {
-    switch (action.state) {
+    console.log("deviceReducer: ");
+    console.log(deviceList);
+    console.log("action");
+    console.log(action);
+    switch (action.type) {
         case DEVICE_ACTION.ADD_DEVICE: {
             const device = action.payload;
             return [...state, device];
