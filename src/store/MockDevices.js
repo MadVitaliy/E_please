@@ -2,12 +2,12 @@ import Heater from './images/Heater.jpg';
 import Lamp from './images/Lamp.jpg';
 import Backlight from './images/Backlight.jpg';
 
-const CONTROL_TYPE = {
+export const CONTROL_TYPE = {
     SWITCHER: 0,
     SLIDER: 1,
     VALUE: 2
 };
-const CONNECTED = true;
+export const CONNECTED = true;
 export let deviceList =
     [
         {
