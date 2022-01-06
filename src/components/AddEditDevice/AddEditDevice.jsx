@@ -1,9 +1,8 @@
 import React from 'react';
 import i from './AddEditDevice.module.css';
 import {CONTROL_TYPE, CONNECTED} from "../../store/MockDevices";
-import {useSelector} from "react-redux";
 
-import {Dropdown, FormLabel, FormControl, FormText, DropdownButton, FormSelect} from "react-bootstrap";
+import {FormLabel, FormControl, FormText, DropdownButton, FormSelect} from "react-bootstrap";
 //import {Form} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Heater from "../../store/images/Heater.jpg";
@@ -31,7 +30,7 @@ const AddEditDevice = (props) => {
         props.onAddEdit(//4,
             device_name,
             protocols[protocol_index].name,
-            CONNECTED,
+            !CONNECTED,
             control_type_index);
     }
 
@@ -62,8 +61,8 @@ const AddEditDevice = (props) => {
             <div>
                 <FormLabel>Control type:</FormLabel>
                 <FormSelect ref={select_control_type_ref} onChange={()=>{
-                    console.log("select_protocol in AddEditDevice");
-                    console.log("selected protocol: " + select_control_type_ref.current.value);
+                    console.log("select_control_type in AddEditDevice");
+                    console.log("selected control_type: " + select_control_type_ref.current.value);
                     console.log(" ");
                 }}>
                     {control_types.map(control_type =>
