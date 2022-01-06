@@ -7,31 +7,34 @@ import {Dropdown, FormLabel, FormControl, FormText, DropdownButton, FormSelect} 
 //import {Form} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Heater from "../../store/images/Heater.jpg";
+import DropdownItem from "react-bootstrap/DropdownItem";
 //import DeviceTab from "../DeviceTabList/DeviceTab/DeviceTab";
 
 const AddEditDevice = (props) => {
     let device_name = props.name;
+    let select_protocol_ref = React.createRef();
+    let select_control_type_ref = React.createRef();
     let protocols = props.protocols;
-
-    let protocol_list = protocols.map(protocol =>
-        <option key={protocol.id} value={protocol.id}>{protocol.name}</option>
-    );
+    let control_types = props.control_types;
 
     const handleButton = () => {
+        let protocol_index = select_protocol_ref.current.value;
+        let control_type_index = select_control_type_ref.current.value;
         console.log("handleButton in AddEditDevice");
-       // console.log("id: 4");
         console.log("device_name: " + device_name);
-        console.log("protocol: " + protocols[0].name);
-        console.log("connection: " + CONNECTED);
-        console.log("control_type: " + CONTROL_TYPE.SWITCHER);
+        console.log("protocol_index: " + protocol_index);
+        console.log("protocol: " + protocols[protocol_index].name);
+        console.log("control_type: " + control_type_index);
         console.log("image: no img yet");
+        console.log(" ");
 
         props.onAddEdit(//4,
             device_name,
-            protocols[0].name,
+            protocols[protocol_index].name,
             CONNECTED,
-            CONTROL_TYPE.SWITCHER);
+            control_type_index);
     }
+
     return (
         <div className={i.page}>
             <FormText>TODO: add something to choose device icon</FormText>
@@ -44,17 +47,28 @@ const AddEditDevice = (props) => {
 
             <div>
                 <FormLabel>Protocol:</FormLabel>
-                <FormSelect>
-                    {protocol_list}
+
+                <FormSelect ref={select_protocol_ref} onChange={() => {
+                    console.log("select_protocol in AddEditDevice");
+                    console.log("selected protocol: " + select_protocol_ref.current.value);
+                    console.log(" ");
+                }}>
+                    {protocols.map(protocol =>
+                        <option key={protocol.id} value={protocol.id}>{protocol.name}</option>
+                    )}
                 </FormSelect>
             </div>
 
             <div>
                 <FormLabel>Control type:</FormLabel>
-                <FormSelect>
-                    <option value="1">Toggle</option>
-                    <option value="2">Slider</option>
-                    <option value="3">Value</option>
+                <FormSelect ref={select_control_type_ref} onChange={()=>{
+                    console.log("select_protocol in AddEditDevice");
+                    console.log("selected protocol: " + select_control_type_ref.current.value);
+                    console.log(" ");
+                }}>
+                    {control_types.map(control_type =>
+                        <option key={control_type.id} value={control_type.id}>{control_type.name}</option>
+                    )}
                 </FormSelect>
                 <FormText className="text-muted">TODO: get the list of available protocols thought props and create
                     options with map</FormText>
