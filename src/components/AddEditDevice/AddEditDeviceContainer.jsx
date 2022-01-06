@@ -11,20 +11,36 @@ import {CONNECTED, CONTROL_TYPE} from "../../store/MockDevices";
 
 
 const AddEditDeviceContainer = () => {
-    let device_default_name = "Enter device name";
+
     //TODO: get protocols list from store
     let protocols = [
         {
-            id: 1,
+            id: 0,
             name: "Protocol #1",
         },
         {
-            id: 2,
+            id: 1,
             name: "Protocol #2",
         },
         {
-            id: 3,
+            id: 2,
             name: "Protocol #3",
+        }
+    ];
+
+    //TODO: get control_type list from store
+    let control_types = [
+        {
+            id: 0,
+            name: "Toggle",
+        },
+        {
+            id: 1,
+            name: "Slider",
+        },
+        {
+            id: 2,
+            name: "Value",
         }
     ];
 
@@ -42,15 +58,16 @@ const AddEditDeviceContainer = () => {
                 control_type));
 
         console.log("handleAdd in AddEditDeviceContainer");
-        //console.log("id: " + id);
         console.log("device_name: " + name);
         console.log("protocol: " + protocol);
-        console.log("connection: " + status);
         console.log("control_type: " + control_type);
         console.log("image: no img yet");
+        console.log(" ");
     }
+
+    let device_default_name = "Enter device name";
     return (
-        <AddEditDevice name={device_default_name} protocols={protocols} onAddEdit={handleAdd}/>
+        <AddEditDevice name={device_default_name} protocols={protocols} control_types={control_types} onAddEdit={handleAdd}/>
     );
 };
 
