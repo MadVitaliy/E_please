@@ -1,15 +1,13 @@
 import React from 'react';
-import i from './AddEditDevice.module.css';
-import {CONTROL_TYPE, CONNECTED} from "../../store/Mocks/DevicesMock";
+import i from './DeviceAddEdit.module.css';
+import {CONNECTED} from "../../store/Mocks/DevicesMock";
 
-import {FormLabel, FormControl, FormText, DropdownButton, FormSelect} from "react-bootstrap";
-//import {Form} from "react-bootstrap";
+import {FormLabel, FormControl, FormText, FormSelect} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import Heater from "../../store/images/Heater.jpg";
-import DropdownItem from "react-bootstrap/DropdownItem";
+
 //import DeviceTab from "../DeviceTabList/DeviceTab/DeviceTab";
 
-const AddEditDevice = (props) => {
+const DeviceAddEdit = (props) => {
     let device_name = props.name;
     let select_protocol_ref = React.createRef();
     let select_control_type_ref = React.createRef();
@@ -74,7 +72,7 @@ const AddEditDevice = (props) => {
             </div>
 
             <Button variant="primary" type="button" onClick={handleButton}>
-                Add/Save
+                {props.button_text}
             </Button>
             <div>
                 <FormText className="text-muted">TODO: add logic to button</FormText>
@@ -82,4 +80,4 @@ const AddEditDevice = (props) => {
         </div>
     );
 };
-export default AddEditDevice;
+export default DeviceAddEdit;

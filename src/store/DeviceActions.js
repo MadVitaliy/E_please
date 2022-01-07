@@ -1,11 +1,12 @@
 import {makeActionCreator} from '../utils/makeActionCreator'
-import Heater from "./images/Heater.jpg";
 
 export const DEVICE_ACTION = {
     ADD_DEVICE: 'ADD_DEVICE',
     UPDATE_DEVICE_NAME: 'UPDATE_DEVICE_NAME',
+    UPDATE_DEVICE: 'UPDATE_DEVICE',
     DELETE_DEVICE: 'DELETE_DEVICE',
     INIT_DEVICES: 'INIT_DEVICES',
+
 };
 
 export const AddDevice = makeActionCreator(DEVICE_ACTION.ADD_DEVICE, [

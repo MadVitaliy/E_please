@@ -1,48 +1,29 @@
 import React from 'react';
 
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
 import {AddDevice} from "../../store/DeviceActions";
-import AddEditDevice from "./AddEditDevice";
-import Heater from "../../store/images/Heater.jpg";
-import Lamp from "../../store/images/Lamp.jpg";
-import Backlight from "../../store/images/Backlight.jpg";
-import {CONNECTED, CONTROL_TYPE} from "../../store/Mocks/DevicesMock";
+import DeviceAddEdit from "./DeviceAddEdit";
+import {control_types} from "../../store/Mocks/DeviceControlTypesMock";
+import {protocols} from "../../store/Mocks/DeviceProtocolsMock";
+import {useLocation} from "react-router-dom";
 
 
-const AddEditDeviceContainer = () => {
-
+const AddEditDeviceContainer = (props) => {
     //TODO: get protocols list from store
-    let protocols = [
-        {
-            id: 0,
-            name: "Protocol #1",
-        },
-        {
-            id: 1,
-            name: "Protocol #2",
-        },
-        {
-            id: 2,
-            name: "Protocol #3",
-        }
-    ];
-
     //TODO: get control_type list from store
-    let control_types = [
-        {
-            id: 0,
-            name: "Toggle",
-        },
-        {
-            id: 1,
-            name: "Slider",
-        },
-        {
-            id: 2,
-            name: "Value",
-        }
-    ];
+
+    let location = useLocation();
+
+    console.log("AddEditDeviceContainer");
+
+    let device = props.location.aboutProps.device;
+    console.log("device");
+    console.log(device);
+    console.log("id: " + device.id,);
+    console.log("name: " + device.name,);
+    console.log("protocol: " + device.protocol,);
+    console.log("control_type: " + device.control_type);
 
     const dispatch = useDispatch();
     const handleAdd = (//id,
@@ -67,10 +48,11 @@ const AddEditDeviceContainer = () => {
 
     let device_default_name = "Enter device name";
     return (
-        <AddEditDevice name={device_default_name}
+        <DeviceAddEdit name={device_default_name}
                        protocols={protocols}
                        control_types={control_types}
-                       onAddEdit={handleAdd}/>
+                       onAddEdit={handleAdd}
+                       button_text = "Save Changes"/>
     );
 };
 

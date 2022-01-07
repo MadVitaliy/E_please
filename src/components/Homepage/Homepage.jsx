@@ -11,7 +11,7 @@ const Homepage = (props) => {
 
             <DeviceTabListContainer/>
 
-            <NavLink to='/addeditdevice'>
+            <NavLink to='/adddevice'>
                 <Button
                     type="button"
                     variant="primary"

@@ -11,7 +11,8 @@ import Diagrams from "./components/Diagrams/Diagrams";
 import Navbar from './components/Navbar/Navbar';
 import Settings from "./components/Settinngs/Settings";
 import Homepage from "./components/Homepage/Homepage";
-import AddEditDeviceContainer from "./components/AddEditDevice/AddEditDeviceContainer";
+import DeviceAddContainer from "./components/DeviceAddEdit/DeviceAddContainer";
+import EditDeviceContainer from "./components/DeviceAddEdit/DeviceEditContainer";
 
 const App = () => {
     return (
@@ -25,7 +26,8 @@ const App = () => {
                     <Route path='/settings' component={Settings} />
                     <Route path='/about' component={About} />
 
-                    <Route path='/addeditdevice' component={AddEditDeviceContainer} />
+                    <Route path='/adddevice' component={DeviceAddContainer} />
+                    <Route path='/editdevice' component={EditDeviceContainer} />
                 </div>
             </BrowserRouter>
         </div>
