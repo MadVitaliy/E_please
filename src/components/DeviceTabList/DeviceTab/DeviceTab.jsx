@@ -22,9 +22,12 @@ const DeviceTab = (props) => {
             <div>
                 <img src={device.img} width="100" height="100"/>
             </div>
-            <p>Device <b>{device.id}</b>
-                <b>{device.name}</b> status: <b>{device.status ? "connected" : "disconnected"}</b></p>
-            <p>Use <b>{device.protocol}</b> protocol, control_type: <>{device.control_type}</></p>
+
+            <p>Device id: <b>{device.id}</b></p>
+            <p>Name: <b>{device.name}</b></p>
+            <p>Status: <b>{device.status ? "connected" : "disconnected"}</b></p>
+            <p>Use <b>{device.protocol}</b> protocol</p>
+            <p>Control_type: <b>{device.control_type}</b></p>
 
             <label className="switch">
                 <input type="checkbox"/>

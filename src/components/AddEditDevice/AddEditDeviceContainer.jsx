@@ -7,7 +7,7 @@ import AddEditDevice from "./AddEditDevice";
 import Heater from "../../store/images/Heater.jpg";
 import Lamp from "../../store/images/Lamp.jpg";
 import Backlight from "../../store/images/Backlight.jpg";
-import {CONNECTED, CONTROL_TYPE} from "../../store/MockDevices";
+import {CONNECTED, CONTROL_TYPE} from "../../store/Mocks/DevicesMock";
 
 
 const AddEditDeviceContainer = () => {
@@ -67,7 +67,10 @@ const AddEditDeviceContainer = () => {
 
     let device_default_name = "Enter device name";
     return (
-        <AddEditDevice name={device_default_name} protocols={protocols} control_types={control_types} onAddEdit={handleAdd}/>
+        <AddEditDevice name={device_default_name}
+                       protocols={protocols}
+                       control_types={control_types}
+                       onAddEdit={handleAdd}/>
     );
 };
 

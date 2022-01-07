@@ -1,6 +1,6 @@
 import React from 'react';
 import i from './AddEditDevice.module.css';
-import {CONTROL_TYPE, CONNECTED} from "../../store/MockDevices";
+import {CONTROL_TYPE, CONNECTED} from "../../store/Mocks/DevicesMock";
 
 import {FormLabel, FormControl, FormText, DropdownButton, FormSelect} from "react-bootstrap";
 //import {Form} from "react-bootstrap";
