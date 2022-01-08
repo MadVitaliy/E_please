@@ -8,11 +8,33 @@ import Button from "react-bootstrap/Button";
 //import DeviceTab from "../DeviceTabList/DeviceTab/DeviceTab";
 
 const DeviceAddEdit = (props) => {
-    let device_name = props.name;
+
     let select_protocol_ref = React.createRef();
     let select_control_type_ref = React.createRef();
     let protocols = props.protocols;
     let control_types = props.control_types;
+
+    let device_name_field;
+    let device_name = props.name;
+    if(device_name != null ){
+        device_name_field = (
+            <div>
+                <FormLabel>Device name:</FormLabel>
+                <FormControl value={device_name}/>
+                <FormLabel className="text-muted">'Speakers' for example</FormLabel>
+            </div>
+        );
+
+    } else {
+        device_name = "Enter device name";
+        device_name_field = (
+            <div>
+                <FormLabel>Device name:</FormLabel>
+                <FormControl placeholder={device_name}/>
+                <FormLabel className="text-muted">'Speakers' for example</FormLabel>
+            </div>
+        );
+    }
 
     const handleButton = () => {
         let protocol_index = select_protocol_ref.current.value;
@@ -32,15 +54,12 @@ const DeviceAddEdit = (props) => {
             control_type_index);
     }
 
+
     return (
         <div className={i.page}>
             <FormText>TODO: add something to choose device icon</FormText>
 
-            <div>
-                <FormLabel>Device name:</FormLabel>
-                <FormControl placeholder={device_name}/>
-                <FormLabel className="text-muted">'Speakers' for example</FormLabel>
-            </div>
+            {device_name_field}
 
             <div>
                 <FormLabel>Protocol:</FormLabel>

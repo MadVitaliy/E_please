@@ -2,7 +2,7 @@ import React from 'react';
 import i from './DeviceTab.module.css';
 import './toggle.css';
 import {Container, Col, Row} from "react-bootstrap";
-import {NavLink, useLocation} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import {TrashFill, GearFill} from "react-bootstrap-icons";
 
@@ -19,12 +19,14 @@ const DeviceTab = (props) => {
     let device = props.device;
 
     const PrintDevice = (device) => {
+        console.log("DeviceTab");
         console.log("id: " + device.id);
         console.log("device_name: " + device.name);
         console.log("protocol: " + device.protocol);
         console.log("connection: " + device.status);
         console.log("control_type: " + device.control_type);
         console.log("image: no img yet");
+        console.log(" ");
     };
     PrintDevice(device);
     return (

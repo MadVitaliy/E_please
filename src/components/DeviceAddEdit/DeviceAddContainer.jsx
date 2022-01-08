@@ -37,7 +37,7 @@ const DeviceAddContainer = (props) => {
 
     let device_default_name = "Enter device name";
     return (
-        <DeviceAddEdit name={device_default_name}
+        <DeviceAddEdit
                        protocols={protocols}
                        control_types={control_types}
                        onAddEdit={handleAdd}
