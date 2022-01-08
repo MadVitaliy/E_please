@@ -1,6 +1,6 @@
 import React from 'react';
 import i from './DeviceAddEdit.module.css';
-import {CONNECTED} from "../../store/Mocks/DevicesMock";
+import {CONNECTED} from "../../redux/Mocks/DevicesMock";
 
 import {FormLabel, FormControl, FormText, FormSelect} from "react-bootstrap";
 import Button from "react-bootstrap/Button";

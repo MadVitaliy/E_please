@@ -13,7 +13,7 @@ export let deviceList =
         {
             id: 0,
             name: "Heater",
-            protocol: "some iot protocol",
+            protocol: "some iot protocol 1",
             status: CONNECTED,
             control_type: CONTROL_TYPE.VALUE,
             img: Heater,
@@ -21,7 +21,7 @@ export let deviceList =
         {
             id: 1,
             name: "Lamp",
-            protocol: "some iot protocol",
+            protocol: "some iot protocol 2",
             status: CONNECTED,
             control_type: CONTROL_TYPE.SWITCHER,
             img: Lamp,
@@ -29,7 +29,7 @@ export let deviceList =
         {
             id: 2,
             name: "Backlight",
-            protocol: "some iot protocol",
+            protocol: "some iot protocol 3",
             status: !CONNECTED,
             control_type: CONTROL_TYPE.SLIDER,
             img: Backlight,

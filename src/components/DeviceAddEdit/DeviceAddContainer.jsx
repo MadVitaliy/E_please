@@ -2,10 +2,10 @@ import React from 'react';
 
 import {useDispatch} from "react-redux";
 
-import {AddDevice} from "../../store/DeviceActions";
+import {AddDevice} from "../../redux/DeviceActions";
 import DeviceAddEdit from "./DeviceAddEdit";
-import {control_types} from "../../store/Mocks/DeviceControlTypesMock";
-import {protocols} from "../../store/Mocks/DeviceProtocolsMock";
+import {control_types} from "../../redux/Mocks/DeviceControlTypesMock";
+import {protocols} from "../../redux/Mocks/DeviceProtocolsMock";
 
 
 

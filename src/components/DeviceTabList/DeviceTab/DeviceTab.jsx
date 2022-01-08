@@ -78,4 +78,4 @@ const DeviceTab = (props) => {
         </Container>
     );
 };
-export default DeviceTab;
+export default  DeviceTab;
