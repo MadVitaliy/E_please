@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/E_please/static/css/main.62b5cbc6.chunk.css",
-    "main.js": "/E_please/static/js/main.0c3fe4ca.chunk.js",
-    "main.js.map": "/E_please/static/js/main.0c3fe4ca.chunk.js.map",
-    "runtime-main.js": "/E_please/static/js/runtime-main.ad79302f.js",
-    "runtime-main.js.map": "/E_please/static/js/runtime-main.ad79302f.js.map",
+    "main.css": "/E_please/static/css/main.04fbee4c.chunk.css",
+    "main.js": "/E_please/static/js/main.faf30863.chunk.js",
+    "main.js.map": "/E_please/static/js/main.faf30863.chunk.js.map",
+    "runtime-main.js": "/E_please/static/js/runtime-main.9ba938c8.js",
+    "runtime-main.js.map": "/E_please/static/js/runtime-main.9ba938c8.js.map",
     "static/css/2.0a9ec390.chunk.css": "/E_please/static/css/2.0a9ec390.chunk.css",
-    "static/js/2.f965756e.chunk.js": "/E_please/static/js/2.f965756e.chunk.js",
-    "static/js/2.f965756e.chunk.js.map": "/E_please/static/js/2.f965756e.chunk.js.map",
-    "static/js/3.67621ad1.chunk.js": "/E_please/static/js/3.67621ad1.chunk.js",
-    "static/js/3.67621ad1.chunk.js.map": "/E_please/static/js/3.67621ad1.chunk.js.map",
+    "static/js/2.fd3d8483.chunk.js": "/E_please/static/js/2.fd3d8483.chunk.js",
+    "static/js/2.fd3d8483.chunk.js.map": "/E_please/static/js/2.fd3d8483.chunk.js.map",
+    "static/js/3.82cb018a.chunk.js": "/E_please/static/js/3.82cb018a.chunk.js",
+    "static/js/3.82cb018a.chunk.js.map": "/E_please/static/js/3.82cb018a.chunk.js.map",
     "index.html": "/E_please/index.html",
     "static/css/2.0a9ec390.chunk.css.map": "/E_please/static/css/2.0a9ec390.chunk.css.map",
-    "static/css/main.62b5cbc6.chunk.css.map": "/E_please/static/css/main.62b5cbc6.chunk.css.map",
-    "static/js/2.f965756e.chunk.js.LICENSE.txt": "/E_please/static/js/2.f965756e.chunk.js.LICENSE.txt",
+    "static/css/main.04fbee4c.chunk.css.map": "/E_please/static/css/main.04fbee4c.chunk.css.map",
+    "static/js/2.fd3d8483.chunk.js.LICENSE.txt": "/E_please/static/js/2.fd3d8483.chunk.js.LICENSE.txt",
     "static/media/Backlight.01fdcfff.jpg": "/E_please/static/media/Backlight.01fdcfff.jpg",
     "static/media/Heater.673b9a47.jpg": "/E_please/static/media/Heater.673b9a47.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ad79302f.js",
+    "static/js/runtime-main.9ba938c8.js",
     "static/css/2.0a9ec390.chunk.css",
-    "static/js/2.f965756e.chunk.js",
-    "static/css/main.62b5cbc6.chunk.css",
-    "static/js/main.0c3fe4ca.chunk.js"
+    "static/js/2.fd3d8483.chunk.js",
+    "static/css/main.04fbee4c.chunk.css",
+    "static/js/main.faf30863.chunk.js"
   ]
 }
