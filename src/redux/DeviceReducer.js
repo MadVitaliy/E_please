@@ -9,21 +9,12 @@ let initialState = {
 
 export const deviceReducer = (state = initialState, action) => {
     console.log("deviceReducer: ");
-    // console.log(deviceList);
-    // console.log("action");
-    // console.log(action);
-    // console.log("state");
-    // console.log(state);
     switch (action.type) {
         case DEVICE_ACTION.ADD_DEVICE: {
             console.log("DEVICE_ACTION.ADD_DEVICE");
             LogDevice(action.device);
             state.devices.push(action.device);
             return state;
-            // return [...state,
-            //     devices: () => {
-            //     return
-            // } state.devices.push(action.device)];
         }
         case DEVICE_ACTION.UPDATE_DEVICE: {
             console.log("DEVICE_ACTION.UPDATE_DEVICE");
