@@ -1,22 +1,26 @@
 import React from 'react';
-import i from './DeviceAddEdit.module.css';
-import {CONNECTED} from "../../redux/Mocks/DevicesMock";
+import i from './DeviceAddUpdate.module.css';
+//import {CONNECTED, CONTROL_TYPE} from "../../redux/Mocks/DevicesMock";
 
 import {FormLabel, FormControl, FormText, FormSelect} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import {LogDevice} from "../../utils/utils";
 
-//import DeviceTab from "../DeviceTabList/DeviceTab/DeviceTab";
-
-const DeviceAddEdit = (props) => {
-
+const DeviceAddUpdate = (props) => {
     let select_protocol_ref = React.createRef();
     let select_control_type_ref = React.createRef();
     let protocols = props.protocols;
     let control_types = props.control_types;
 
+    console.log("DeviceAddUpdate");
+    let device = props.device;
+
     let device_name_field;
-    let device_name = props.name;
-    if(device_name != null ){
+    let device_name;
+    if (device != null) {
+        console.log("device");
+        LogDevice(device);
+        device_name = props.device.name;
         device_name_field = (
             <div>
                 <FormLabel>Device name:</FormLabel>
@@ -24,7 +28,6 @@ const DeviceAddEdit = (props) => {
                 <FormLabel className="text-muted">'Speakers' for example</FormLabel>
             </div>
         );
-
     } else {
         device_name = "Enter device name";
         device_name_field = (
@@ -37,21 +40,26 @@ const DeviceAddEdit = (props) => {
     }
 
     const handleButton = () => {
-        let protocol_index = select_protocol_ref.current.value;
-        let control_type_index = select_control_type_ref.current.value;
-        console.log("handleButton in AddEditDevice");
-        console.log("device_name: " + device_name);
-        console.log("protocol_index: " + protocol_index);
-        console.log("protocol: " + protocols[protocol_index].name);
-        console.log("control_type: " + control_type_index);
-        console.log("image: no img yet");
-        console.log(" ");
+        if (device != null) {
+            props.onAddEdit({
+                id: props.device.id,
+                name: "new name",
+                protocol: props.device.protocol,
+                status: props.device.status,
+                control_type: props.device.control_type
+            });
+        } else {
+            props.onAddEdit({
+                id: 10,
+                name: "new device",
+                protocol: protocols[0].name,
+                status: true,
+                control_type: control_types[0].name
+            });
+        }
 
-        props.onAddEdit(//4,
-            device_name,
-            protocols[protocol_index].name,
-            !CONNECTED,
-            control_type_index);
+
+        //  props.onAddEdit(props.device);
     }
 
 
@@ -77,7 +85,7 @@ const DeviceAddEdit = (props) => {
 
             <div>
                 <FormLabel>Control type:</FormLabel>
-                <FormSelect ref={select_control_type_ref} onChange={()=>{
+                <FormSelect ref={select_control_type_ref} onChange={() => {
                     console.log("select_control_type in AddEditDevice");
                     console.log("selected control_type: " + select_control_type_ref.current.value);
                     console.log(" ");
@@ -99,4 +107,4 @@ const DeviceAddEdit = (props) => {
         </div>
     );
 };
-export default DeviceAddEdit;
+export default DeviceAddUpdate;

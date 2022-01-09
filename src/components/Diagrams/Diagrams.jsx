@@ -1,7 +1,5 @@
 import React from 'react';
-import i from './Diagrams.module.css';
-
-console.log(i);
+//import i from './Diagrams.module.css';
 
 const Diagrams = () => {
     return (

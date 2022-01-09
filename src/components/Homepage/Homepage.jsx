@@ -8,9 +8,6 @@ import {NavLink} from "react-router-dom";
 const Homepage = (props) => {
     return (
         <div className={i.page}>
-
-            <DeviceTabListContainer/>
-
             <NavLink to='/adddevice'>
                 <Button
                     type="button"
@@ -20,6 +17,8 @@ const Homepage = (props) => {
                     <Plus/>
                 </Button>
             </NavLink>
+
+            <DeviceTabListContainer/>
         </div>
     );
 };

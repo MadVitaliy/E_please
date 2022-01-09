@@ -6,7 +6,6 @@ import {NavLink} from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import {TrashFill, GearFill} from "react-bootstrap-icons";
 
-console.log(i);
 /*
 *   TODO: create DeviceTabContainer component.
 *   In container component: check control type and create control tool:
@@ -50,7 +49,7 @@ const DeviceTab = (props) => {
                 <Col className={i.border}>
                     <p>update button</p>
                     <NavLink to={{
-                        pathname: '/editdevice',
+                        pathname: '/updatedevice',
                         aboutProps: {
                             device: device,
                         }
@@ -70,6 +69,7 @@ const DeviceTab = (props) => {
                         type="button"
                         variant="primary"
                         className={i.button}
+                        onClick={(e) => {props.deleteDevice(device)}}
                     >
                         <TrashFill/>
                     </Button>

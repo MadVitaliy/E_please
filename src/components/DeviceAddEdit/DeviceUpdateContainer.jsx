@@ -1,26 +1,29 @@
 import React from 'react';
-import {addDeviceAC} from "../../redux/DeviceReducer";
-import {connect} from "react-redux";
-import DeviceAddUpdate from "./DeviceAddUpdate";
-import {protocols} from "../../redux/Mocks/DeviceProtocolsMock";
-import {control_types} from "../../redux/Mocks/DeviceControlTypesMock";
-import {LogDevice} from "../../utils/utils";
 
-const DeviceAddContainer = (props) => {
+import DeviceAddUpdate from "./DeviceAddUpdate";
+import {control_types} from "../../redux/Mocks/DeviceControlTypesMock";
+import {protocols} from "../../redux/Mocks/DeviceProtocolsMock";
+import {updateDeviceAC} from "../../redux/DeviceReducer";
+import {connect} from "react-redux";
+import {LogDevice} from "../../utils/utils";
+//import {useLocation} from "react-router-dom";
+
+
+const DeviceUpdateContainer = (props) => {
     //TODO: get protocols list from store
     //TODO: get control_type list from store
 
-    console.log("DeviceAddContainer");
+    console.log("DeviceUpdateContainer");
     const updateDevice = (device) => {
-        console.log("updateDevice in DeviceAddContainer");
+        console.log("handleAdd in DeviceUpdateContainer");
         LogDevice(device);
-        props.addDevice(device);
-    }
-    //let device_default_name = "Enter device name";
+        console.log(" ");
 
+        props.updateDevice(device);
+    }
 
     return (
-        <DeviceAddUpdate
+        <DeviceAddUpdate device={props.location.aboutProps.device}
                          onAddEdit={updateDevice}
                          protocols={protocols}
                          control_types={control_types}
@@ -28,16 +31,18 @@ const DeviceAddContainer = (props) => {
     );
 };
 
+
 let mapStateToProps = (state) => {
     return {}
 }
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        addDevice: (device) => {
-            dispatch(addDeviceAC(device));
+        updateDevice: (device) => {
+            dispatch(updateDeviceAC(device));
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeviceAddContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(DeviceUpdateContainer);
+//export default DeviceUpdateContainer;
