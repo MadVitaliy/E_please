@@ -1,7 +1,5 @@
 import React from 'react';
-import i from './Settings.module.css';
-
-console.log(i);
+//import i from './Settings.module.css';
 
 const Settings = () => {
     return (

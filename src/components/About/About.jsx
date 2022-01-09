@@ -1,7 +1,4 @@
 import React from 'react';
-import i from './About.module.css';
-
-console.log(i);
 
 const About = () => {
     return (
