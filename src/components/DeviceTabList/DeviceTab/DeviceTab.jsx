@@ -5,6 +5,8 @@ import {Container, Col, Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import {TrashFill, GearFill} from "react-bootstrap-icons";
+import {control_types} from "../../../redux/Mocks/DeviceControlTypesMock";
+import {protocols} from "../../../redux/Mocks/DeviceProtocolsMock";
 
 /*
 *   TODO: create DeviceTabContainer component.
@@ -39,8 +41,8 @@ const DeviceTab = (props) => {
                     <p>Device id: <b>{device.id}</b></p>
                     <p>Name: <b>{device.name}</b></p>
                     <p>Status: <b>{device.status ? "connected" : "disconnected"}</b></p>
-                    <p>Use <b>{device.protocol}</b> protocol</p>
-                    <p>Control_type: <b>{device.control_type}</b></p>
+                    <p>Use <b>{protocols[device.protocol].name}</b> protocol</p>
+                    <p>Control_type: <b>{control_types[device.control_type].name}</b></p>
                 </Col>
                 <Col className={i.border}>
                     <p>here should be the passed control tool</p>

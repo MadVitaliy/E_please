@@ -25,7 +25,6 @@ export const deviceReducer = (state = initialState, action) => {
             const new_status = temp_device.status;
             const new_control_type = temp_device.control_type;
 
-            console.log("handleAdd in DeviceUpdateContainer");
             LogDevice(temp_device);
 
             return {

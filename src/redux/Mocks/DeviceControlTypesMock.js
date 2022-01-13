@@ -1,14 +1,16 @@
+import {CONTROL_TYPE} from "./DevicesMock";
+
 export let control_types = [
     {
-        id: 0,
+        id: CONTROL_TYPE.SWITCHER,
         name: "Toggle",
     },
     {
-        id: 1,
+        id: CONTROL_TYPE.SLIDER,
         name: "Slider",
     },
     {
-        id: 2,
+        id: CONTROL_TYPE.VALUE,
         name: "Value",
     }
 ];

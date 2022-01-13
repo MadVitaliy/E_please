@@ -6,31 +6,44 @@ import {protocols} from "../../redux/Mocks/DeviceProtocolsMock";
 import {updateDeviceAC} from "../../redux/DeviceReducer";
 import {connect} from "react-redux";
 import {LogDevice} from "../../utils/utils";
-//import {useLocation} from "react-router-dom";
 
-
-const DeviceUpdateContainer = (props) => {
+class DeviceUpdateContainer extends React.Component {
     //TODO: get protocols list from store
     //TODO: get control_type list from store
-
-    console.log("DeviceUpdateContainer");
-    const updateDevice = (device) => {
-        console.log("handleAdd in DeviceUpdateContainer");
-        LogDevice(device);
-        console.log(" ");
-
-        props.updateDevice(device);
+    constructor(props) {
+        super(props);
+        let device = this.props.location.aboutProps.device;
+        this.state = {
+            device: JSON.parse(JSON.stringify(device))
+        };
     }
 
-    return (
-        <DeviceAddUpdate device={props.location.aboutProps.device}
-                         onAddEdit={updateDevice}
-                         protocols={protocols}
-                         control_types={control_types}
-                         button_text="Save Changes"/>
-    );
-};
+    componentDidMount() {
+        console.log("DeviceUpdateContainerMount");
+    }
 
+    onNameChange = (e) => {
+        this.setState({form_device_name: e.target.value});
+        console.log(this.state.form_device_name);
+    }
+
+    updateDevice = (updated_device) => {
+        console.log("handleAdd in DeviceUpdateContainer");
+        LogDevice(updated_device);
+        this.props.updateDevice(JSON.parse(JSON.stringify(updated_device)));
+    }
+
+    render() {
+        return (
+            <DeviceAddUpdate device={JSON.parse(JSON.stringify(this.state.device))}
+                             protocols={protocols}
+                             control_types={control_types}
+                             button_text="Save Changes"
+                             onSubmit={this.updateDevice}
+                             new_device={false}/>
+        );
+    }
+}
 
 let mapStateToProps = (state) => {
     return {}
