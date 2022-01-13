@@ -2,6 +2,7 @@ import React from 'react';
 import i from './DeviceTabList.module.css';
 import DeviceTab from "../DeviceTabList/DeviceTab/DeviceTab";
 import {LogDevice} from "../../utils/utils";
+import {Container} from "react-bootstrap";
 
 
 const DeviceTabList = (props) => {
@@ -11,9 +12,9 @@ const DeviceTabList = (props) => {
         }
     );
     return (
-        <div className={i.page}>
+        <Container fluid className={i.page}>
             {device_tabs}
-        </div>
+        </Container>
     );
 };
 export default DeviceTabList;

@@ -5,13 +5,14 @@ import i from './DeviceAddUpdate.module.css';
 import {FormLabel, FormControl, FormText, FormSelect} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import {LogDevice} from "../../utils/utils";
+import {NavLink} from "react-router-dom";
 
 class DeviceAddUpdate extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            device:  this.props.device,
+            device: this.props.device,
             new_device: props.new_device
         };
 
@@ -19,14 +20,14 @@ class DeviceAddUpdate extends React.Component {
     }
 
     TextField = () => {
-        if(this.state.new_device)
+        if (this.state.new_device)
             return (<div>
                 <FormLabel>Device name:</FormLabel>
                 <FormControl placeholder={"Enter device name"} onChange={(e) => {
                     this.setState({
                         device: {
                             id: this.state.device.id,
-                            name: e.target.value,
+                            name: Number(e.target.value),
                             protocol: this.state.device.protocol,
                             status: this.state.device.status,
                             control_type: this.state.device.control_type,
@@ -43,7 +44,7 @@ class DeviceAddUpdate extends React.Component {
                 this.setState({
                     device: {
                         id: this.state.device.id,
-                        name: e.target.value,
+                        name: Number(e.target.value),
                         protocol: this.state.device.protocol,
                         status: this.state.device.status,
                         control_type: this.state.device.control_type,
@@ -131,11 +132,13 @@ class DeviceAddUpdate extends React.Component {
                         options with map</FormText>
                 </div>
 
-                <Button variant="primary" type="button" onClick={(e) => {
-                    this.props.onSubmit(this.state.device);
-                }}>
-                    {this.props.button_text}
-                </Button>
+                <NavLink to='/homepage'>
+                    <Button variant="primary" type="button" onClick={(e) => {
+                        this.props.onSubmit(this.state.device);
+                    }}>
+                        {this.props.button_text}
+                    </Button>
+                </NavLink>
                 <div>
                     <FormText className="text-muted">TODO: add logic to button</FormText>
                 </div>

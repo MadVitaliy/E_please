@@ -1,108 +1,99 @@
 import React from 'react';
 import i from './DeviceTab.module.css';
 import './toggle.css';
-import {Container, Col, Row} from "react-bootstrap";
+import {Col, Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import {TrashFill, GearFill} from "react-bootstrap-icons";
 import {control_types} from "../../../redux/Mocks/DeviceControlTypesMock";
 import {protocols} from "../../../redux/Mocks/DeviceProtocolsMock";
 import {RangeStepInput} from 'react-range-step-input';
+import {CONTROL_TYPE} from "../../../redux/Mocks/DevicesMock";
+import {LogDevice} from "../../../utils/utils";
 
-/*
-*   TODO: create DeviceTabContainer component.
-*   In container component: check control type and create control tool:
-*   toggle or slider or value field
-*   and pass it into this component
-*/
 
 const DeviceTab = (props) => {
 
     let device = props.device;
     let control_type = device.control_type;
-    let sliderComp = (<> <RangeStepInput /></>) ; 
-    let toggleComp = (<> <label class="switch">
-                            <input type="checkbox"/>
-                            <span class="slider round"></span>
-                            </label></>);
-    let valueComp = ( <><label>Go to </label>
-                        <input type="number" defaultValue={0}  /> </>);
-   
+    let sliderComp = (<RangeStepInput/>);
+    let toggleComp = (
+        <>
+            <label class="switch">
+                <input type="checkbox"/>
+                <span class="slider round"/>
+            </label>
+        </>);
+    let valueComp = (
+        <>
+            <label>Go to </label>
+            <input type="number" defaultValue={0}/>
+        </>);
+    let defaultComp = (<> lol</>);
 
-    const  controlElement = () =>{
-        switch (control_type){
-            case 0: {
-                return toggleComp ;
-            } 
-            case 1: {
-                return sliderComp ; 
-            }  
-            case 2: {
-               return valueComp ;
+    const controlElement = () => {
+        switch (Number(control_type)) {
+            case CONTROL_TYPE.SWITCHER: {
+                return toggleComp;
             }
-        }   
-    }   
+            case CONTROL_TYPE.SLIDER: {
+                return sliderComp;
+            }
+            case CONTROL_TYPE.VALUE: {
+                return valueComp;
+            }
+            default: {
+                return defaultComp;
+            }
+        }
+    }
 
-    const PrintDevice = (device) => {
-        console.log("DeviceTab");
-        console.log("id: " + device.id);
-        console.log("device_name: " + device.name);
-        console.log("protocol: " + device.protocol);
-        console.log("connection: " + device.status);
-        console.log("control_type: " + device.control_type);
-        console.log("image: no img yet");
-        console.log(" ");
-    };
-    PrintDevice(device);
+    console.log("DeviceTab");
+    LogDevice(device);
     return (
-        <Container fluid className={i.tab}>
-            <Row>
-                <Col className={i.border}>
-                    <div>
-                        <img src={device.img} width="100" height="100"/>
-                    </div>
-
-                    <p>Device id: <b>{device.id}</b></p>
-                    <p>Name: <b>{device.name}</b></p>
-                    <p>Status: <b>{device.status ? "connected" : "disconnected"}</b></p>
-                    <p>Use <b>{protocols[device.protocol].name}</b> protocol</p>
-                    <p>Control_type: <b>{control_types[device.control_type].name}</b></p>
-                </Col>
-                <Col className={i.border}>
-                    <p>here should be the passed control tool</p>
-                    {controlElement(device.control_type)}
-                </Col>
-                <Col className={i.border}>
-                    <p>update button</p>
-                    <NavLink to={{
-                        pathname: '/updatedevice',
-                        aboutProps: {
-                            device: device,
-                        }
-                    }}>
-                        <Button
-                            type="button"
-                            variant="primary"
-                            className={i.button}
-                        >
-                            <GearFill/>
-                        </Button>
-                    </NavLink>
-                </Col>
-                <Col className={i.border}>
-                    <p>delete button</p>
+        <Row className={i.tab}>
+            <Col xl={1} className={i.border}>
+                <img src={device.img} width="100" height="100"/>
+            </Col>
+            <Col className={i.border}>
+                <p>Device id: <b>{device.id}</b></p>
+                <p>Name: <b>{device.name}</b></p>
+                <p>Status: <b>{device.status ? "connected" : "disconnected"}</b></p>
+                <p>Use <b>{protocols[device.protocol].name}</b> protocol</p>
+                <p>Control_type: <b>{control_types[device.control_type].name}</b></p>
+            </Col>
+            <Col xl={2} className={i.border}>
+                {controlElement(device.control_type)}
+            </Col>
+            <Col xl={1} className={i.border}>
+                <NavLink to={{
+                    pathname: '/updatedevice',
+                    aboutProps: {
+                        device: device,
+                    }
+                }}>
                     <Button
                         type="button"
                         variant="primary"
                         className={i.button}
-                        onClick={(e) => {props.deleteDevice(device)}}
                     >
-                        <TrashFill/>
+                        <GearFill/>
                     </Button>
-                </Col>
-                
-            </Row>
-        </Container>
+                </NavLink>
+            </Col>
+            <Col xl={1} className={i.border}>
+                <Button
+                    type="button"
+                    variant="primary"
+                    className={i.button}
+                    onClick={(e) => {
+                        props.deleteDevice(device)
+                    }}
+                >
+                    <TrashFill/>
+                </Button>
+            </Col>
+        </Row>
     );
 };
-export default  DeviceTab;
+export default DeviceTab;

@@ -1,6 +1,6 @@
 This repo os for cool(no) ReactJS project for Evgen Batrak. Wish us good lack!
 
-If you read this test after 01.01.2022, we have been expelled from the university after half of the last study year.
+If you read this test after 14.01.2022, we have been expelled from the university after half of the last study year.
 
 ## Link to the course: 
 https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8
