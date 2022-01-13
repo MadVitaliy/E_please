@@ -24,6 +24,7 @@ class DeviceTabListContainer extends React.Component {
         this.state = {devices : this.props.devices};
     }
 
+
     componentDidMount() {
        // this.props.setDevices(deviceList);
     }
