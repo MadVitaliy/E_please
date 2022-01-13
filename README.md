@@ -1,6 +1,8 @@
-This repo os for cool(no) ReactJS project for Evgen Batrak. Wish us good lack!
+# Teacher have taken this project :) 
+##We will not be expelled from the university
 
-If you read this test after 14.01.2022, we have been expelled from the university after half of the last study year.
+
+This repo os for cool(no) ReactJS project for Evgen Batrak. Wish us good lack!
 
 ## Link to the course: 
 https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8
