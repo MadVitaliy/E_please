@@ -5,6 +5,8 @@ import {Container, Col, Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import {TrashFill, GearFill} from "react-bootstrap-icons";
+import {RangeStepInput} from 'react-range-step-input';
+
 
 /*
 *   TODO: create DeviceTabContainer component.
@@ -16,6 +18,29 @@ import {TrashFill, GearFill} from "react-bootstrap-icons";
 const DeviceTab = (props) => {
 
     let device = props.device;
+    let control_type = device.control_type;
+    let sliderComp = (<> <RangeStepInput /></>) ; 
+    let toggleComp = (<> <label class="switch">
+                            <input type="checkbox"/>
+                            <span class="slider round"></span>
+                            </label></>);
+    let valueComp = ( <><label>Go to </label>
+                        <input type="number" defaultValue={0}  /> </>);
+   
+
+    const  controlElement = () =>{
+        switch (control_type){
+            case 0: {
+                return toggleComp ;
+            } 
+            case 1: {
+                return sliderComp ; 
+            }  
+            case 2: {
+               return valueComp ;
+            }
+        }   
+    }   
 
     const PrintDevice = (device) => {
         console.log("DeviceTab");
@@ -44,7 +69,7 @@ const DeviceTab = (props) => {
                 </Col>
                 <Col className={i.border}>
                     <p>here should be the passed control tool</p>
-                    {/*{props.control_tool}*/}
+                    {controlElement(device.control_type)}
                 </Col>
                 <Col className={i.border}>
                     <p>update button</p>
@@ -74,6 +99,7 @@ const DeviceTab = (props) => {
                         <TrashFill/>
                     </Button>
                 </Col>
+                
             </Row>
         </Container>
     );
